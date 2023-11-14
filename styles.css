@@ -1,0 +1,44 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    color: #0a0a23;
+}
+
+/* You can use CSS to make elements with this class completely hidden from the visual page, but still be announced by screen readers.
+The CSS you are about to write is a common set of properties used to ensure elements are completely hidden visually.*/
+span[class~="sr-only"]{
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px );
+    clip-path: inset(50%);
+/* The CSS clip property is used to define the visible portions of an element. Set the span[class~="sr-only"] selector to have a clip property of rect(1px, 1px, 1px, 1px).
+The clip-path property determines the shape the clip property should take. Set the clip-path property to the value of inset(50%), forming the clip-path into a rectangle within the element.*/
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+/*  you need to take these hidden elements out of the document flow. 
+This will ensure that not only are they no longer visible, but they are not even within the page view.*/
+    position: absolute;
+    padding: 0;
+    margin: -1px;
+}
+h1{
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+}
+h1 .flex{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+/*The :first-of-type pseudo-selector is used to target the first element that matches the selector.
+h1 .flex span:first-of-type selector to target the first span element in your .flex container.*/
+h1 .flex span:first-of-type{
+    font-size: 0.7em;
+}
+h1 .flex span:last-of-type{
+    font-size: 1.2em;
+}
