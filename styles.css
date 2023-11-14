@@ -42,3 +42,112 @@ h1 .flex span:first-of-type{
 h1 .flex span:last-of-type{
     font-size: 1.2em;
 }
+section{
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+}
+#years{
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    color: #fff;
+    background-color: #0a0a23;
+/*The calc() function is a CSS function that allows you to calculate a value based on other values. 
+For example, you can use it to calculate the width of the viewport minus the margin of an element:*/
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+    z-index: 999;
+}
+#years span[class]{
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+}
+.table-wrap{
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+/*The :not() pseudo-selector is used to target all elements that do not match the selector - 
+in this case, any of your span elements that do not have the sr-only class.
+span{
+    font-weight: normal;
+}*/
+table{
+    border-collapse: collapse;
+    border: 0;
+    position: relative;
+    width: 100%;
+    margin-top: 3rem;
+}
+table caption{
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+}
+tbody td{
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+}
+
+tbody th{
+/*width of the entire container, less 12rem.*/
+    width: calc(100% - 12rem);
+}
+tr[class="total"]{
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+}
+/* target the th elements within your table rows 
+where the class is total. */
+tr[class="total"] th{
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+}
+tr.total td{
+    text-align: right;
+    padding: 0 0.25rem;
+}
+/*The :nth-of-type() pseudo-selector is used to target 
+specific elements based on their order among siblings of the same type.*/
+tr.total td:nth-of-type(3){
+    padding-right: 0.5rem;
+}
+
+tr.total:hover{
+    background-color: #99c9ff;
+}
+
+td.current {
+    font-style: italic;
+}
+
+tr.data{
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th .description {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+}
+
+tr.data th{
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+}
+tr.data td{
+    text-align: right;
+    vertical-align: top;
+    padding: 0.3rem 0.25rem 0;
+}
+tr.data td:last-of-type{
+    padding-right: 0.5rem;
+}
